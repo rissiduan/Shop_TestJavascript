@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: rgb(255, 255, 255);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btt {
+
+            border-radius: 100%;
+            transition: 0.3s ease;
+            text-decoration: none;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btt:hover {
+            background-color: rgb(243, 243, 243);
+            padding: 30px;
+            border-radius: 5%;
+            transform: scale(105%);
+        }
+
+        h1 {
+            font-size: 80px;
+            color: #000000;
+            text-align: center;
+        }
+
+        .main {
+            position: relative;
+            height: 90px;
+            overflow: hidden;
+            font-size: 40px;
+        }
+
+        .main span {
+            display: block;
+            position: absolute;
+            top: 110%;
+            left: 0;
+            width: 100%;
+            color: #000;
+            white-space: nowrap;
+            font-size: 70px;
+        }
+
+        .main span[data-show] {
+            transform: translateY(-100%);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .main span[data-up] {
+            transform: translateY(-200%);
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .main span:nth-child(1) {
+            color: #0ecffe;
+
+        }
+
+        .main span:nth-child(2) {
+            color: #18e198;
+
+        }
+
+        .main span:nth-child(3) {
+            color: #8a7cfb;
+
+        }
+
+        .main span:nth-child(4) {
+            color: #fa7671;
+
+        }
+
+        .main span:nth-child(5) {
+            color: #d371fa;
+
+        }
+
+        .blob1 {
+            background-color: rgb(243, 243, 243);
+            width: 700px;
+            height: 600px;
+            position: absolute;
+            top: -200px;
+            left: -90px;
+            z-index: 1;
+            border-radius: 60% 40% 40% 60% / 60% 40% 60% 40%;
+            animation: flow1 3.5s infinite ease-in-out;
+        }
+
+        @keyframes flow1 {
+            0% {
+                border-radius: 60% 40% 40% 60% / 60% 40% 60% 40%;
+            }
+
+            35% {
+                border-radius: 80% 70% 50% 60% / 80% 60% 60% 40%;
+            }
+
+            70% {
+                border-radius: 60% 50% 30% 80% / 60% 30% 70% 70%;
+            }
+
+            100% {
+                border-radius: 60% 40% 40% 60% / 60% 40% 60% 40%;
+            }
+        }
+        .blob2 {
+            background-color: rgb(243, 243, 243);
+            width: 700px;
+            height: 600px;
+            position: absolute;
+            top: 900px;
+            left: -50px;
+            z-index: 0;
+            border-radius: 60% 40% 40% 60% / 60% 40% 60% 40%;
+            animation: flow2 2.5s infinite ease-in-out;
+        }
+
+        @keyframes flow2 {
+            0% {
+                border-radius: 40% 40% 80% 70% / 60% 20% 50% 60%;
+            }
+
+            35% {
+                border-radius: 80% 70% 50% 60% / 80% 60% 60% 40%;
+            }
+
+            70% {
+                border-radius: 60% 50% 30% 50% / 60% 30% 70% 70%;
+            }
+
+            100% {
+                border-radius: 40% 40% 80% 70% / 60% 20% 50% 60%;
+            }
+        }
+        .blob3 {
+    background-color: rgb(243, 243, 243);
+    width: 700px;
+    height: 600px;
+    position: fixed; 
+    bottom: -200px; 
+    right: -200px; 
+    z-index: 0; 
+    border-radius: 60% 40% 40% 60% / 60% 40% 60% 40%;
+    animation: flow3 3s infinite ease-in-out;
+}
+
+
+        @keyframes flow3 {
+            0% {
+                border-radius: 40% 60% 30% 40% / 30% 40% 70% 50%;
+            }
+
+            35% {
+                border-radius: 70% 70% 80% 60% / 80% 40% 60% 30%;
+            }
+
+            70% {
+                border-radius: 60% 50% 50% 80% / 60% 40% 70% 40%;
+            }
+
+            100% {
+                border-radius: 40% 60% 30% 40% / 30% 40% 70% 50%;
+            }
+        }
+        .blob4 {
+    background-color: rgb(243, 243, 243);
+    width: 700px;
+    height: 600px;
+    position: fixed; 
+    bottom: 900px; 
+    right: -200px; 
+    z-index: 0; 
+    border-radius: 60% 40% 40% 60% / 60% 40% 60% 40%;
+    animation: flow4 3s infinite ease-in-out;
+}
+
+
+        @keyframes flow4 {
+            0% {
+                border-radius: 50% 70% 40% 70% / 40% 70% 70% 40%;
+            }
+
+            35% {
+                border-radius: 70% 70% 80% 60% / 80% 40% 60% 30%;
+            }
+
+            70% {
+                border-radius: 60% 50% 50% 80% / 60% 40% 70% 40%;
+            }
+
+            100% {
+                border-radius: 50% 70% 40% 70% / 40% 70% 70% 40%;
+            }
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="blob1"></div>
+    <div class="blob2"></div>
+    <div class="blob3"></div>
+    <div class="blob4"></div>
+    <a class="btt" href="menu.html">
+        <div>
+            <h1>เริ่มต้นการซื้อของ</h1>
+            <div class="main">
+                <span data-show>อาหาร</span>
+                <span>เครื่องดื่ม</span>
+                <span>เสื้อผ้า</span>
+                <span>ยารักษาโรค</span>
+                <span>ของใช้</span>
+            </div>
+        </div>
+    </a>
+
+    <script src="code.js"></script>
+</body>
+
+</html>
